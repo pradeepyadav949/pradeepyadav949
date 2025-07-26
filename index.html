@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<!-- https://mince-sign-gig.figma.site/ Reference for personal portfolio  -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pradeep Yadav</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="./tailwind.config.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Ovo&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./images/py-icon.png" type="image/x-icon">
+
+    <style>
+        body::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        body::-webkit-scrollbar-track {
+            background: #f1f1f100;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background: #88888800;
+        }
+
+        body::-webkit-scrollbar-thumb:hover {
+            background: #55555500;
+        }
+    </style>
+
+</head>
+
+<body class="overflow-x-hidden font-Outfit leading-8 dark:bg-darkTheme dark:text-white">
+
+    <div class="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%] dark:hidden">
+        <img src="./images/header-bg-color.png" class="w-full">
+    </div>
+
+    <nav class="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50">
+        <h1><i><span class=" text-3xl">P</span>radeep <span class=" text-3xl">Y</span>adav</i></h1>
+
+        <ul
+            class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white shadow-sm bg-opacity-50 font-Ovo dark:border dark:border-white/50 dark:bg-transparent">
+            <li><a href="#top">Home</a></li>
+            <li><a href="#about">About me</a></li>
+            <!-- <li><a href="#services">Services</a></li> -->
+            <!-- <li><a href="#work">My Work</a></li> -->
+            <li><a href="#contact">Contact me</a></li>
+        </ul>
+        <div class="flex items-center gap-4">
+            <button onclick="toggleTheme()" title="Toggle Dark/Light Theme" class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300">
+                <img src="./images/moon_icon.png" class="w-6 dark:hidden">
+                <img src="./images/sun_icon.png" class="w-6 hidden dark:block">
+            </button>
+
+            <a href="#contact"
+                class="hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full m1-4 font-Ovo dark:border-white/50">
+                Contact
+                <img src="./images/arrow-icon.png" class="w-3 dark:hidden">
+                <img src="./images/arrow-icon-dark.png" class="w-3 hidden dark:block">
+            </a>
+
+            <button class="block md:hidden ml-3" onclick="openmenu()">
+                <img src="./images/menu-black.png" class="w-6 dark:hidden">
+                <img src="./images/menu-white.png" class="w-6 hidden dark:block">
+            </button>
+
+        </div>
+
+        <!---------------mobile menu ------->
+        <ul id="sideMenu"
+            class="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration-500 font-Ovo dark:bg-darkHover dark:text-white">
+
+            <div class="absolute right-6 top-6" onclick="closemenu()">
+                <img src="./images/close-black.png" class="w-5 cursor-pointer dark:hidden">
+                <img src="./images/close-white.png" class="w-5 cursor-pointer hidden dark:block">
+            </div>
+
+            <li><a href="#top" onclick="closemenu()">Home</a></li>
+            <li><a href="#about" onclick="closemenu()">About me</a></li>
+            <!-- <li><a href="#services" onclick="closemenu()">Services</a></li> -->
+            <!-- <li><a href="#work" onclick="closemenu()">My Work</a></li> -->
+            <li><a href="#contact" onclick="closemenu()">Contact me</a></li>
+        </ul>
+    </nav>
+    <!--------header---------------------------------------->
+
+    <div class="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4">
+
+        <img src="./images/Profile.png" class="rounded-md w-32 mt-28">
+        <h3 class="flex items-end gap-2 text-xml md:text-2xl mb-3 font-Ovo">Hi! I'm Pradeep Yadav<img
+                src="./images/hand-icon.png" class="w-6"></h3>
+        <h1 class="text-3xl sm:text-6xl lg:text-[66px] font-Ovo">Full Stack MERN Developer</h1>
+        <p class="max-w-2xl mx-auto font-Ovo">Welcome to my portfolio! I am a full-stack developer with 5+ years of experience in MERN stack development, specializing in JavaScript frameworks, API design, version control, deployment automation, and building scalable applications.</p>
+
+
+        <div class="flex flex-col sm:flex-row items-center gap-4 mt-4">
+            <a href="#contact"
+                class="px-10 py-3 border rounded-full bg-gradient-to-r from-[#b820e6] to-[#da7d20] text-white flex items-center gap-2 dark:border-transparent">contact
+                me<img src="./images/right-arrow-white.png" class="w-4"></a>
+
+            <a href="https://drive.google.com/file/d/1rSXpBfIHWIPfTmARgUYKO9HFS_VZJsV8/view?usp=sharing"
+                target="_blank" download
+                class="px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2 bg-white dark:text-black">my
+                resume<img src="./images/download-icon.png" class="w-4"></a>
+        </div>
+    </div>
+
+
+    <!------------------------About me-------->
+    <div id="about" class="w-full px-[12%] py-10 scroll-mt-20">
+        <h4 class="text-center mb-2 text-lg font-Ovo">Introduction</h4>
+        <h2 class="text-center text-5xl font-Ovo">About me</h2>
+        <div class="flex w-full flex-col lg:flex-row items-center gap-20 my-20">
+            <div class="max-w-max mx-auto relative">
+                <img src="./images/download.png" class="w-64 sm:w-80 rounded-3xl max-w-none">
+
+            </div>
+            <div class="flex-1">
+                <p class="mb-10 max-w-2xl font-Ovo">
+                    I’m Pradeep Yadav, a full-stack developer with over 5 years of experience building scalable web applications and automation solutions. My expertise covers the MERN stack and modern JavaScript ecosystem, including Express, Node.js, React.js, Next.js, Redux, JavaScript (ES6+), MongoDB, and MySQL. I specialize in frontend architecture, API development, backend architecture, database design, and automation of business processes. I am skilled in using Git, GitHub, CI/CD pipelines, and Linux environments for efficient development and deployment. My core strengths include problem-solving, data structures & algorithms, GenAI prompting, technical comprehension, and delivering robust, maintainable solutions for complex requirements.
+                </p>
+                <ul class="grid grid-cols-1 sm:grid-cols-auto gap-6 max-w-2xl">
+                    <li
+                        class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50">
+                        <img src="./images/code-icon.png" class="w-7 mt-3 dark:hidden">
+                        <img src="./images/code-icon-dark.png" class="w-7 mt-3 hidden dark:block">
+
+                        <h3 class="my-4 font-semibold text-gray-700 dark:text-white">Core Technologies</h3>
+                        <p class="text-gray-600 text-sm dark:text-white/80">JavaScript ES6+, React.js, Next.js, Node.js, Express.js, MongoDB, State Management, REST APIs, Git, GitHub, Nginx, Cloud deployment</p>
+                    </li>
+                    <li
+                        class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50">
+                        <img src="./images/edu-icon.png" class="w-7 mt-3 dark:hidden">
+                        <img src="./images/edu-icon-dark.png" class="w-7 mt-3 hidden dark:block">
+
+                        <h3 class="my-4 font-semibold text-gray-700 dark:text-white">Education</h3>
+                        <p class="text-gray-600 text-sm dark:text-white/80">B.Tech in Electronics and Communications
+                            Engineering (GGSIPU)</p>
+                    </li>
+                    <li
+                        class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-lightHover hover:-translate-y-1 duration-500 hover:shadow-black dark:border-white dark:hover:shadow-white dark:hover:bg-darkHover/50">
+                        <img src="./images/project-icon.png" class="w-7 mt-3 dark:hidden">
+                        <img src="./images/project-icon-dark.png" class="w-7 mt-3 hidden dark:block">
+
+                        <h3 class="my-4 font-semibold text-gray-700 dark:text-white">Experience</h3>
+                        <p class="text-gray-600 text-sm dark:text-white/80">5+ years specializing in full-stack development, JavaScript frameworks, frontend architecure, backend architecture, database design, and scalable application development.</p>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <!-----------------Contact--------------------------->
+
+    <div id="contact"
+        class="w-full px-[12%] py-10 scroll-mt-20 bg-[url('./images/footer-bg-color.png')] bg-no-repeat bg-[length:90%_auto] bg-center dark:bg-none">
+        <!-- <h4 class="text-center mb-2 text-lg font-Ovo">Contact with me</h4> -->
+        <h2 class="text-center text-5xl font-Ovo">Get in touch</h2>
+        <p class="text-center max-w-2xl mx-auto mt-5 mb-12">Feel free to reach out for collaboration, inquiries, or just
+            to say hello!</p>
+
+        <form id="contactForm" class="max-w-2xl mx-auto">
+
+            <input type="hidden" name="access_key" value="cea0bbe0-1384-4be2-9d7c-f57558a556f1">
+
+            <div class="grid grid-cols-auto gap-6 mt-10 mb-8">
+                <input type="text" placeholder="Enter Your name" 
+                    class="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-darkHover/30 dark:border-white/90"
+                    required id="name" name="name" maxlength="40" pattern="[A-Za-z ]{1,40}" title="Name should be up to 40 alphabets only (A-Z, a-z, spaces)">
+
+                <input type="email" placeholder="Enter Your email"
+                    class="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-darkHover/30 dark:border-white/90"
+                    required id="email" name="email" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}" title="Please enter a valid email address.">
+
+                <input type="tel" placeholder="Enter Your phone number"
+                    class="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-darkHover/30 dark:border-white/90"
+                    required id="phone" name="phone" pattern="[6-9][0-9]{9}" maxlength="10" minlength="10">
+            </div>
+            <textarea rows="6" name="message" placeholder="Enter your message"
+                class="w-full p-4 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6 dark:bg-darkHover/30 dark:border-white/90"
+                required id="message"></textarea>
+
+            <button type="submit" id="submitBtn" 
+                class="py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500 dark:bg-transparent dark:border-[0.5px] dark:hover:bg-darkHover">Submit
+                now
+                <img src="./images/right-arrow-white.png" alt="" class="w-4">
+            </button>
+            <p id="formStatus" class="text-xs text-gray-500 mt-3"></p>
+        </form>
+        <a href="https://wa.me/919717135620" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-1 rounded-full shadow-lg hover:bg-green-600 z-50">
+            <svg xmlns="http://www.w3.org/2000/svg" aria-label="WhatsApp" role="img" viewBox="0 0 512 512" fill="none" width="60" height="60">
+                <path fill="#25d366" stroke="#ffffff" stroke-width="26" d="M123 393l14-65a138 138 0 1150 47z"></path>
+                <path fill="#ffffff" d="M308 273c-3-2-6-3-9 1l-12 16c-3 2-5 3-9 1-15-8-36-17-54-47-1-4 1-6 3-8l9-14c2-2 1-4 0-6l-12-29c-3-8-6-7-9-7h-8c-2 0-6 1-10 5-22 22-13 53 3 73 3 4 23 40 66 59 32 14 39 12 48 10 11-1 22-10 27-19 1-3 6-16 2-18"></path>
+            </svg>
+        </a>
+    </div>
+
+    <!----------------------footer-------------------------------->
+
+    <div class="mt-20">
+        <div class="text-center">
+
+
+            <div class="w-max flex items-center gap-2 mx-auto">
+                <img src="./images/mail_icon.png" alt="" class="w-6 dark:hidden">
+                <img src="./images/mail_icon_dark.png" alt="" class="w-6 hidden dark:block">
+                rpy@live.in
+            </div>
+        </div>
+
+        <div class="text-center sm:flex items-center justify-between border-t border-gray-400 mx-[10%] mt-12 py-6">
+            <p>2025 © Pradeep Yadav - All Rights Reserved.</p>
+            <ul class="flex items-center gap-10 justify-center mt-4 sm:mt-0">
+                <li><a href="https://www.instagram.com/pradeepyadav.dev/" target="_blank">Instagram</a></li>
+                <li><a href="https://github.com/pradeepyadav949" target="_blank">Github</a></li>
+                <li><a href="https://www.linkedin.com/in/pradeepyadav949" target="_blank">Linkedin</a></li>
+            </ul>
+        </div>
+    </div>
+        <script src="./script.js"></script>
+</body>
+
+</html>
